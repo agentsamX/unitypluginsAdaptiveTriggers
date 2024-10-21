@@ -173,6 +173,118 @@ namespace Apple.GameController.Controller
         }
         #endregion
         
+        #region Controller Adaptive Triggers
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftFeedback(string uniqueId, float startPosition, float resistiveStrength);
+
+        public static void SetControllerAdaptiveLeftFeedback(GCControllerHandle controllerHandle, float startPosition, float resistiveStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftFeedback(controllerHandle.UniqueId, startPosition, resistiveStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Feedback [{startPosition}, {resistiveStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightFeedback(string uniqueId, float startPosition, float resistiveStrength);
+
+        public static void SetControllerAdaptiveRightFeedback(GCControllerHandle controllerHandle, float startPosition, float resistiveStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightFeedback(controllerHandle.UniqueId, startPosition, resistiveStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Feedback [{startPosition}, {resistiveStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftWeapon(string uniqueId, float startPosition, float endPosition, float resistiveStrength);
+
+        public static void SetControllerAdaptiveLeftWeapon(GCControllerHandle controllerHandle, float startPosition, float endPosition, float resistiveStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftWeapon(controllerHandle.UniqueId, startPosition, endPosition, resistiveStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Weapon [{startPosition}, {endPosition} {resistiveStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightWeapon(string uniqueId, float startPosition, float endPosition, float resistiveStrength);
+
+        public static void SetControllerAdaptiveRightWeapon(GCControllerHandle controllerHandle, float startPosition, float endPosition, float resistiveStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightWeapon(controllerHandle.UniqueId, startPosition, endPosition, resistiveStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Weapon [{startPosition}, {endPosition} {resistiveStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftSlope(string uniqueId, float startPosition, float endPosition, float startStrength, float endStrength);
+
+        public static void SetControllerAdaptiveLeftSlope(GCControllerHandle controllerHandle, float startPosition, float endPosition, float startStrength, float endStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftSlope(controllerHandle.UniqueId, startPosition, endPosition, startStrength, endStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Slope [{startPosition}, {endPosition} {startStrength}, {endStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightSlope(string uniqueId, float startPosition, float endPosition, float startStrength, float endStrength);
+
+        public static void SetControllerAdaptiveRightSlope(GCControllerHandle controllerHandle, float startPosition, float endPosition, float startStrength, float endStrength)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightSlope(controllerHandle.UniqueId, startPosition, endPosition, startStrength, endStrength);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Slope [{startPosition}, {endPosition} {startStrength}, {endStrength}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftVibration(string uniqueId, float startPosition, float amplitude, float frequency);
+
+        public static void SetControllerAdaptiveLeftVibration(GCControllerHandle controllerHandle, float startPosition, float amplitude, float frequency)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftVibration(controllerHandle.UniqueId, startPosition, amplitude, frequency);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Vibration [{startPosition}, {amplitude} {frequency}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightVibration(string uniqueId, float startPosition, float amplitude, float frequency);
+
+        public static void SetControllerAdaptiveRightVibration(GCControllerHandle controllerHandle, float startPosition, float amplitude, float frequency)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightVibration(controllerHandle.UniqueId, startPosition, amplitude, frequency);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Vibration [{startPosition}, {amplitude} {frequency}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftPositionalVibration(string uniqueId, float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10);
+
+        public static void SetControllerAdaptiveLeftPositionalVibration(GCControllerHandle controllerHandle, float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftPositionalVibration(controllerHandle.UniqueId, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Positional Vibration [{frequency}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightPositionalVibration(string uniqueId, float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10);
+
+        public static void SetControllerAdaptiveRightPositionalVibration(GCControllerHandle controllerHandle, float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightPositionalVibration(controllerHandle.UniqueId, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Positional Vibration [{frequency}]");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveLeftPositionalResistance(string uniqueId, float strength1, float strength2, float strength3, float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10);
+
+        public static void SetControllerAdaptiveLeftPositionalResistance(GCControllerHandle controllerHandle, float strength1, float strength2, float strength3, float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10)
+        {
+            GameControllerWrapper_SetControllerAdaptiveLeftPositionalResistance(controllerHandle.UniqueId, strength1, strength2, strength3, strength4, strength5, strength6, strength7, strength8, strength9, strength10);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} left trigger to Positional Resistance ");
+        }
+
+        [DllImport(InteropUtility.DLLName)]
+        private static extern void GameControllerWrapper_SetControllerAdaptiveRightPositionalResistance(string uniqueId, float strength1, float strength2, float strength3, float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10);
+
+        public static void SetControllerAdaptiveRightPositionalResistance(GCControllerHandle controllerHandle, float strength1, float strength2, float strength3, float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10)
+        {
+            GameControllerWrapper_SetControllerAdaptiveRightPositionalResistance(controllerHandle.UniqueId, strength1, strength2, strength3, strength4, strength5, strength6, strength7, strength8, strength9, strength10);
+            Debug.Log($"Setting controller {controllerHandle.UniqueId} right trigger to Positional Resistance ");
+        }
+        
+        #endregion
+        
         #region Get Symbol for Input Name
         [DllImport(InteropUtility.DLLName)]
         private static extern GCGetSymbolForInputNameResponse GameControllerWrapper_GetSymbolForInputName(string uniqueId, GCControllerInputName inputName, GCControllerSymbolScale symbolScale, GCControllerRenderingMode renderingMode);

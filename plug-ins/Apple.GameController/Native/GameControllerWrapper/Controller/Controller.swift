@@ -155,6 +155,266 @@ public func GameControllerWrapper_SetControllerLightColor
     }
 }
 
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftFeedback")
+public func GameControllerWrapper_SetControllerAdaptiveLeftFeedback
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    resistiveStrength : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeFeedbackWithStartPosition(startPosition,resistiveStrength: resistiveStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightFeedback")
+public func GameControllerWrapper_SetControllerAdaptiveRightFeedback
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    resistiveStrength : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeFeedbackWithStartPosition(startPosition,resistiveStrength: resistiveStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftWeapon")
+public func GameControllerWrapper_SetControllerAdaptiveLeftWeapon
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    endPosition : Float,
+    resistiveStrength : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeWeaponWithStartPosition(startPosition,endPosition: endPosition,resistiveStrength: resistiveStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightWeapon")
+public func GameControllerWrapper_SetControllerAdaptiveRightWeapon
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    endPosition : Float,
+    resistiveStrength : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeWeaponWithStartPosition(startPosition,endPosition: endPosition,resistiveStrength: resistiveStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftSlope")
+public func GameControllerWrapper_SetControllerAdaptiveLeftSlope
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    endPosition : Float,
+    startStrength : Float,
+    endStrength : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeSlopeFeedback(startPosition: startPosition,endPosition: endPosition,startStrength: startStrength,endStrength: endStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightSlope")
+public func GameControllerWrapper_SetControllerAdaptiveRightSlope
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    endPosition : Float,
+    startStrength : Float,
+    endStrength : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeSlopeFeedback(startPosition: startPosition,endPosition: endPosition,startStrength: startStrength,endStrength: endStrength)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftVibration")
+public func GameControllerWrapper_SetControllerAdaptiveLeftVibration
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    amplitude : Float,
+    frequency : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeVibrationWithStartPosition(startPosition,amplitude: amplitude,frequency: frequency)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightVibration")
+public func GameControllerWrapper_SetControllerAdaptiveRightVibration
+(
+    uniqueId : char_p,
+    startPosition : Float,
+    amplitude : Float,
+    frequency : Float
+)
+{
+    if #available(macOS 11.3, iOS 14.5, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeVibrationWithStartPosition(startPosition,amplitude: amplitude,frequency: frequency)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftPositionalVibration")
+public func GameControllerWrapper_SetControllerAdaptiveLeftPositionalVibration
+(
+    uniqueId : char_p,
+    frequency : Float,
+    amplitude1 : Float,
+    amplitude2 : Float,
+    amplitude3 : Float,
+    amplitude4 : Float,
+    amplitude5 : Float,
+    amplitude6 : Float,
+    amplitude7 : Float,
+    amplitude8 : Float,
+    amplitude9 : Float,
+    amplitude10 : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeVibration(amplitudes: GCDualSenseAdaptiveTrigger.PositionalAmplitudes(values: (amplitude1,amplitude2,amplitude3,amplitude4,amplitude5,amplitude6,amplitude7,amplitude8,amplitude9,amplitude10)),frequency: frequency)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightPositionalVibration")
+public func GameControllerWrapper_SetControllerAdaptiveRightPositionalVibration
+(
+    uniqueId : char_p,
+    frequency : Float,
+    amplitude1 : Float,
+    amplitude2 : Float,
+    amplitude3 : Float,
+    amplitude4 : Float,
+    amplitude5 : Float,
+    amplitude6 : Float,
+    amplitude7 : Float,
+    amplitude8 : Float,
+    amplitude9 : Float,
+    amplitude10 : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeVibration(amplitudes: GCDualSenseAdaptiveTrigger.PositionalAmplitudes(values: (amplitude1,amplitude2,amplitude3,amplitude4,amplitude5,amplitude6,amplitude7,amplitude8,amplitude9,amplitude10)),frequency: frequency)
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveLeftPositionalResistance")
+public func GameControllerWrapper_SetControllerAdaptiveLeftPositionalResistance
+(
+    uniqueId : char_p,
+    strength1 : Float,
+    strength2 : Float,
+    strength3 : Float,
+    strength4 : Float,
+    strength5 : Float,
+    strength6 : Float,
+    strength7 : Float,
+    strength8 : Float,
+    strength9 : Float,
+    strength10 : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.leftTrigger.setModeFeedback(resistiveStrengths: GCDualSenseAdaptiveTrigger.PositionalResistiveStrengths(values: (strength1,strength2,strength3,strength4,strength5,strength6,strength7,strength8,strength9,strength10)))
+            }
+        }
+    }
+}
+
+@_cdecl("GameControllerWrapper_SetControllerAdaptiveRightPositionalResistance")
+public func GameControllerWrapper_SetControllerAdaptiveRightPositionalResistance
+(
+    uniqueId : char_p,
+    strength1 : Float,
+    strength2 : Float,
+    strength3 : Float,
+    strength4 : Float,
+    strength5 : Float,
+    strength6 : Float,
+    strength7 : Float,
+    strength8 : Float,
+    strength9 : Float,
+    strength10 : Float
+)
+{
+    if #available(macOS 12.3, iOS 15.4, tvOS 14, *) {
+        let controller = _controllerMapping.elements[uniqueId.toString()];
+        if (controller != nil) {
+            if let controllerDS = controller?.physicalInputProfile as? GCDualSenseGamepad {
+                controllerDS.rightTrigger.setModeFeedback(resistiveStrengths: GCDualSenseAdaptiveTrigger.PositionalResistiveStrengths(values: (strength1,strength2,strength3,strength4,strength5,strength6,strength7,strength8,strength9,strength10)))
+            }
+        }
+    }
+}
+
+
+
 @available(OSX 11.00, tvOS 14, iOS 14.0, *)
 fileprivate func _getSymbolNameForExtendedInput(inputName : GCWControllerInputName, profile : GCExtendedGamepad) -> String? {
     

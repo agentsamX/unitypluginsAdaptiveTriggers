@@ -190,5 +190,69 @@ namespace Apple.GameController.Controller
         {
             GCControllerService.SetControllerLightColor(Handle, red, green, blue);
         }
+
+        public void SetAdaptiveLeftFeedback(float startPosition, float resistiveStrength)
+        {
+            GCControllerService.SetControllerAdaptiveLeftFeedback(Handle, startPosition, resistiveStrength);
+        }
+
+        public void SetAdaptiveRightFeedback(float startPosition, float resistiveStrength)
+        {
+            GCControllerService.SetControllerAdaptiveRightFeedback(Handle, startPosition, resistiveStrength);
+        }
+
+        public void SetAdaptiveLeftWeapon(float startPosition, float endPosition, float resistiveStrength)
+        {
+            GCControllerService.SetControllerAdaptiveLeftWeapon(Handle, startPosition, endPosition, resistiveStrength);
+        }
+
+        public void SetAdaptiveRightWeapon(float startPosition, float endPosition, float resistiveStrength)
+        {
+            GCControllerService.SetControllerAdaptiveRightWeapon(Handle, startPosition, endPosition, resistiveStrength);
+        }
+
+        public void SetAdaptiveLeftSlope(float startPosition, float endPosition, float startStrength, float endStrength)
+        {
+            GCControllerService.SetControllerAdaptiveLeftSlope(Handle, startPosition, endPosition, startStrength, endStrength);
+        }
+
+        public void SetAdaptiveRightSlope(float startPosition, float endPosition, float startStrength, float endStrength)
+        {
+            GCControllerService.SetControllerAdaptiveRightSlope(Handle, startPosition, endPosition, startStrength, endStrength);
+        }
+
+        public void SetAdaptiveLeftVibration(float startPosition, float amplitude, float frequency)
+        {
+            GCControllerService.SetControllerAdaptiveLeftVibration(Handle, startPosition, amplitude, frequency);
+        }
+
+        public void SetAdaptiveRightVibration(float startPosition, float amplitude, float frequency)
+        {
+            GCControllerService.SetControllerAdaptiveRightVibration(Handle, startPosition, amplitude, frequency);
+        }
+
+        public void SetAdaptiveLeftPositionalVibration(float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        {
+            GCControllerService.SetControllerAdaptiveLeftPositionalVibration(Handle, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
+        }
+
+        public void SetAdaptiveRightPositionalVibration(float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        {
+            GCControllerService.SetControllerAdaptiveRightPositionalVibration(Handle, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
+        }
+
+        public void SetAdaptiveLeftPositionalResistance(float strength1, float strength2, float strength3 , float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10)
+        {
+            GCControllerService.SetControllerAdaptiveLeftPositionalResistance(Handle, strength1, strength2, strength3, strength4, strength5, strength6, strength7, strength8, strength9, strength10);
+        }
+
+        public void SetAdaptiveRightPositionalResistance(float strength1, float strength2, float strength3 , float strength4, float strength5, float strength6, float strength7, float strength8, float strength9, float strength10)
+        {
+            GCControllerService.SetControllerAdaptiveRightPositionalResistance(Handle, strength1, strength2, strength3, strength4, strength5, strength6, strength7, strength8, strength9, strength10);
+        }
+       
+
+        // Add code for adaptive triggers
+
     }
 } 
