@@ -231,12 +231,12 @@ namespace Apple.GameController.Controller
             GCControllerService.SetControllerAdaptiveRightVibration(Handle, startPosition, amplitude, frequency);
         }
 
-        public void SetAdaptiveLeftPositionalVibration(float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        public void SetAdaptiveLeftPositionalVibration(float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10, float frequency)
         {
             GCControllerService.SetControllerAdaptiveLeftPositionalVibration(Handle, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
         }
 
-        public void SetAdaptiveRightPositionalVibration(float frequency, float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10)
+        public void SetAdaptiveRightPositionalVibration(float amplitude1, float amplitude2, float amplitude3, float amplitude4, float amplitude5, float amplitude6, float amplitude7, float amplitude8, float amplitude9, float amplitude10, float frequency)
         {
             GCControllerService.SetControllerAdaptiveRightPositionalVibration(Handle, frequency, amplitude1, amplitude2, amplitude3, amplitude4, amplitude5, amplitude6, amplitude7, amplitude8, amplitude9, amplitude10);
         }
